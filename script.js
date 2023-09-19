@@ -1,7 +1,12 @@
 var loginBtn = document.getElementById("login");
+
 loginBtn.addEventListener('click', function(){
 
-    console.log("Amake click marce");
+    document.getElementById("login-area").style.display ="none";
 
+    var trnArea = document.getElementById("trn-area");
+
+    trnArea.style.display = "block";
 
 })
+
