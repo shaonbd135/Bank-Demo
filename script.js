@@ -93,7 +93,7 @@ withdrawBtn.addEventListener('click', function(){
 
     }
 
-    else if (withdrawAmountNumber>0 && withdrawAmountNumber<totalBalanceNumber){
+    else if (withdrawAmountNumber>0 && withdrawAmountNumber<=totalBalanceNumber){
 
         const newTotalWithdraw = withdrawAmountNumber + totalWithdrawNumber;
 
