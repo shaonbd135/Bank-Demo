@@ -1,3 +1,5 @@
+//login button Event handler
+
 var loginBtn = document.getElementById("login");
 
 loginBtn.addEventListener('click', function(){
@@ -9,4 +11,44 @@ loginBtn.addEventListener('click', function(){
     trnArea.style.display = "block";
 
 })
+
+//Deposit button event handler
+
+var depositBtn = document.getElementById("addDeposit");
+
+depositBtn.addEventListener('click', function(){
+
+    const depositAmount = document.getElementById("depositAmount").value;
+
+    const depositNumber = parseFloat(depositAmount);
+
+    const currentDeposit = document.getElementById("currentDeposit").innerText;
+
+    const currentDepositNumber = parseFloat(currentDeposit);
+
+    const totalDeposit = depositNumber + currentDepositNumber;
+
+    document.getElementById("currentDeposit").innerText = totalDeposit;
+
+    document.getElementById("depositAmount").value = "";
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+})
+
+
+
+
 
