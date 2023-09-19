@@ -22,7 +22,15 @@ depositBtn.addEventListener('click', function(){
 
     const depositNumber = parseFloat(depositAmount);
 
-    const currentDeposit = document.getElementById("currentDeposit").innerText;
+    if (depositNumber<0) {
+
+        alert("You have enter Negetive Amount ! Please Enter Positive Amount")
+        
+    } 
+
+    else if(depositNumber>0){
+
+        const currentDeposit = document.getElementById("currentDeposit").innerText;
 
     const currentDepositNumber = parseFloat(currentDeposit);
 
@@ -42,6 +50,18 @@ depositBtn.addEventListener('click', function(){
 
     document.getElementById("totalBalance").innerText = newTotalBalance;
 
+
+    }
+
+
+    else {
+
+        alert("You have enter Wrong Amount")
+        
+    }
+
+    
+
 })
 
 // Withdraw Button event handler 
@@ -50,25 +70,55 @@ var withdrawBtn = document.getElementById("addWithdraw");
 
 withdrawBtn.addEventListener('click', function(){
 
-const withdrawAmount = document.getElementById('withdrawAmount').value;
-const withdrawAmountNumber = parseFloat(withdrawAmount);
+    const withdrawAmount = document.getElementById('withdrawAmount').value;
+    const withdrawAmountNumber = parseFloat(withdrawAmount);
 
-const totalWithdraw = document.getElementById('totalWithdraw').innerText;
-const totalWithdrawNumber = parseFloat(totalWithdraw);
+    const totalWithdraw = document.getElementById('totalWithdraw').innerText;
+    const totalWithdrawNumber = parseFloat(totalWithdraw);
 
-const newTotalWithdraw = withdrawAmountNumber + totalWithdrawNumber;
+    const totalBalance = document.getElementById("totalBalance").innerText;
 
-document.getElementById('totalWithdraw').innerText = newTotalWithdraw;
+    const totalBalanceNumber = parseFloat(totalBalance);
 
-document.getElementById('withdrawAmount').value = "";
+    if (withdrawAmountNumber < 0 ) {
+
+        alert("You Entered Negative Amount! Please Enter positive Amount")
+        
+    }
+
+    else if(withdrawAmountNumber>totalBalanceNumber){
+
+        alert("You Don't Have Enough Money")
+
+
+    }
+
+    else if (withdrawAmountNumber>0 && withdrawAmountNumber<totalBalanceNumber){
+
+        const newTotalWithdraw = withdrawAmountNumber + totalWithdrawNumber;
+
+    document.getElementById('totalWithdraw').innerText = newTotalWithdraw;
+
+    document.getElementById('withdrawAmount').value = "";
 
 // decrease Balance event handler
 
-const totalBalance = document.getElementById("totalBalance").innerText;
 
-    const totalBalanceNumber = parseFloat(totalBalance);
     const newTotalBalance = totalBalanceNumber - withdrawAmountNumber;
     document.getElementById("totalBalance").innerText = newTotalBalance;
+
+    }
+    
+    
+    else {
+
+        alert("You Enter Wrong Amount")
+        
+    }
+
+    
+
+    
 
 })
 
